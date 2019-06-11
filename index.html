@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Earthsite</title>
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            }
+
+        .active, .accordion:hover {
+            background-color: #ccc; 
+            }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            }
+        body{
+            margin:0;
+            background-color:rgb(238, 214, 214);
+            font-family: sans-serif;
+        }
+        ul.nav-menu{
+            top:0;
+            width: 100%;
+            position:fixed;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;   
+        }
+        ul>li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.nav-menu li a:hover{
+            background-color: #111;
+            
+        }
+        ul.nav-menu li{
+            float: left;
+        }
+        div.wrapper{
+            clear: both;
+        }
+        div#home{
+            background-image: url(/images/coffee.jpg);
+            min-height: 300px;
+            text-align: center;
+            font-size:30px;
+            line-height: 300px;
+        }
+        footer{
+            background: blue;
+        }
+        input#email-text{
+            margin-left:35px;
+        }
+
+        
+    
+
+        
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <header class="header" id='myHeader'>
+        
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </header>
+    <center>
+    <div id="main" class="wrapper">
+        <div id="home">
+                <p>Welcome to my Website</p>
+        </div>
+
+        <div id="about">
+            <h4>About Us</h4>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae commodi ratione in, ea saepe possimus eaque numquam rem error nihil.
+                
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, nihil libero dignissimos voluptatum fugit maxime distinctio amet alias labore minus cumque architecto inventore optio necessitatibus, corrupti, provident tempora. Dolor, iure.
+            </p>
+        </div>
+
+        <div id="contact">
+            
+            <h4>Contact us</h4>
+            <p>Full Name :<input type="text" id="fullname-text" placeholder="Full Name"></p>
+            <p>    Email :<input type="text" id="email-text" placeholder="Email"></p>
+            <p>Telephone : <input type="text" id="tel-text" placeholder="Tel"></p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure eligendi ut quam id quo eaque excepturi at optio aperiam illum?
+            </p>
+            <input type="button" id = "submit-button"value="SUBMIT">
+        </div>
+
+        
+    </div>
+    </center>
+    <a id="button-faq" href="#faq">FAQ</a>
+        <div id="faq" hidden>
+            <button class="accordion">Question 1</button>
+            <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <button class="accordion">Question 2</button>
+            <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <button class="accordion">Question 3</button>
+            <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+        </div>  
+
+    <footer>
+            <h1>Footer</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, consequuntur error. Esse, sit at assumenda, ratione nostrum veritatis porro laboriosam aspernatur ullam ab quam? Ut, optio aliquid officia veniam esse autem praesentium nihil excepturi quasi nulla, voluptas consequuntur quae quod hic eveniet ullam in quidem dolores quas cumque sunt. Vero, atque iste autem nisi sed perspiciatis at voluptates natus.</p>
+    </footer>
+
+    <script>
+        ////// Toggle FAQ button///////////
+        $( "#button-faq" ).click(function() {
+            $( "#faq" ).toggle("slow");
+            });
+        
+        ////////////////////////////
+        
+        //// Contact us ////////////
+        $("#submit-button").click(function(){
+            var fn = $('#fullname-text').val();
+            var email = $('#email-text').val();
+            var tel = $('#tel-text').val();
+            alert("Thank you " + fn + "\nWe just send message to " + email + "\nor call to " + tel);
+            //$('#contact').append("<br>Thank you " + fn + "<br>We just send message to " + email + "<br>or call to " + tel +"<br>");
+            location.reload();
+        });
+        ////////////////////////////////
+
+        //////// LIST QUESTION /////////
+        var acc = $('.accordion');
+        var i;
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("slow");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+            panel.style.display = "none";
+            } else {
+            panel.style.display = "block";
+            }
+        });
+        }
+
+
+        //CONSOLE LOG,INFO,ERROR
+        $(document).ready(function(){
+            var divHome = $('#home').html("");
+            console.log("LOG",divHome);     //Show Message ??
+            console.info("Info");
+            console.error("Error");
+        });
+        ////////////////////////////////
+
+    </script>
+
+</body>
+</html>
