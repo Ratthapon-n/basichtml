@@ -9,35 +9,34 @@
 		<title>EarthSite</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <style>
-            #header{
-                width: 100%;
-                position:fixed;
-            }
-            .accordion2 {
-            background-color: #eee;
+
+
+            .accordion {
+            background-color: rgb(209, 113, 113);
             color: #444;
             cursor: pointer;
-            padding: 18px;
             width: 100%;
             border: none;
-            text-align: left;
+            text-align: center;
+
             outline: none;
             font-size: 15px;
             transition: 0.4s;
             }
 
-            .active, .accordion2:hover {
-                background-color: #ccc; 
-                }
+        .active, .accordion:hover {
+            background-color: rgb(151, 76, 76); 
+            }
 
-            .panel2 {
-                padding: 0 18px;
-                display: none;
-                background-color: white;
-                overflow: hidden;
-                }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            }
 
         </style>
 	</head>
@@ -82,6 +81,8 @@
 				</section>
 
 
+            
+
 				<section id="contact" class="wrapper style3 special">
 					<div class="container">
 						<header class="major">
@@ -95,36 +96,32 @@
 							<li><a id ="submit-button" class="button special big">Submit</a></li>
 						</ul>
 					</div>
-				</section>
-                <div class="col-8 col-12-medium" id="faq">
-                                <section>
-                                    <a id ="button-faq"><h1>FAQ</h1></a>
+                </section>
+                
 
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-3 col-6-medium col-12-small">
-                                                <ul class="link-list">
-                                                    <li><a href="#">Sed neque nisi consequat</a></li>
-                                                    <li><a href="#">Dapibus sed mattis blandit</a></li>
-                                                    <li><a href="#">Quis accumsan lorem</a></li>
-                                                    <li><a href="#">Suspendisse varius ipsum</a></li>
-                                                    <li><a href="#">Eget et amet consequat</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-3 col-6-medium col-12-small">
-                                                <ul class="link-list">
-                                                    <li><a href="#">Quis accumsan lorem</a></li>
-                                                    <li><a href="#">Sed neque nisi consequat</a></li>
-                                                    <li><a href="#">Eget et amet consequat</a></li>
-                                                    <li><a href="#">Dapibus sed mattis blandit</a></li>
-                                                    <li><a href="#">Vitae magna sed dolore</a></li>
-                                                </ul>
-                                            </div>
 
-                                        </div>
-                                    </div>
+                <!-- footer -->
 
-        
+                <section>
+                        <a id="button-faq" href="#faq"><h2>FAQ</h2></a>
+                        <div id="faq" hidden>
+                            <button class="accordion">Question 1 ?</button>
+                            <div class="panel">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sint quasi, aperiam repellendus consequatur fuga ex minima dolores quia molestiae dolore accusamus dolorem impedit nulla aliquid corporis similique sequi eveniet provident vitae excepturi veritatis voluptatum culpa. Accusamus nobis repudiandae, totam unde dolorum ad. Tenetur qui quidem sint, corporis rerum omnis sunt minima enim nostrum ratione temporibus necessitatibus! Facere beatae voluptatibus eveniet delectus modi, odio nostrum porro reiciendis minima nulla eos quia laudantium repudiandae accusantium itaque doloribus blanditiis excepturi atque soluta et incidunt tempore. Quidem qui facilis iusto, iste quos natus! Fugiat excepturi repellat at numquam, optio distinctio quae omnis voluptatum.</p>
+                            </div>
+    
+                            <button class="accordion">Question 2 ? </button>
+                            <div class="panel">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis error, deserunt quisquam ex minus sequi quidem, porro illo a nemo nobis accusamus tempora eveniet vel cumque praesentium ad nihil corrupti nulla numquam. Reiciendis eveniet quo labore in id magni nam velit doloremque at quos amet incidunt adipisci hic autem a, facilis nulla placeat voluptas explicabo earum dolorem dolorum rerum. Consequuntur veniam, saepe molestiae minus placeat, officiis tempore animi quae necessitatibus inventore beatae nisi possimus ipsam velit quia corrupti incidunt quas aspernatur assumenda nam? Aliquam voluptas sed natus suscipit ex modi alias inventore doloribus cumque officia, placeat odio tempora nulla consectetur?</p>
+                            </div>
+    
+                            <button class="accordion">Question 3 ? </button>
+                            <div class="panel">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, perspiciatis dolores. Officiis delectus, veritatis beatae tempore amet ducimus officia vitae commodi asperiores quia nemo voluptatum ab minima. Aliquam, eum repellendus in facilis, sit laborum dolorum repellat inventore qui, aut ipsam iusto. Excepturi sed omnis harum veritatis. Nisi blanditiis ipsam a.</p>
+                            </div>
+                </section>
+
+
 
                 
                 
@@ -134,22 +131,7 @@
 
 			<footer id="footer">
 				<div class="container">
-                    <a id="button-faq" href="#faq">FAQ</a>
-                    <div id="faq" hidden>
-                        <button class="accordion">Question 1</button>
-                        <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-
-                        <button class="accordion">Question 2</button>
-                        <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-
-                        <button class="accordion">Question 3</button>
-                        <div class="panel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
+                    
                         
                     </div>  
 					<ul class="icons">
@@ -171,13 +153,19 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
             <script>
+                
                 $("#submit-button").click(function(){
-                var fn = $('#fullname-text').val();
-                var email = $('#email-text').val();
-                var tel = $('#tel-text').val();
-                alert("Thank you " + fn + "\nWe just send message to " + email + "\nor call to " + tel);
-                //$('#contact').append("<br>Thank you " + fn + "<br>We just send message to " + email + "<br>or call to " + tel +"<br>");
-                location.reload();
+                    if($('#fullname-text').val() != "" && $('#email-text').val() != "" && $('#tel-text').val() != "" && $('#message-text').val() != ""){
+                        var fn = $('#fullname-text').val();
+                        var email = $('#email-text').val();
+                        var tel = $('#tel-text').val();
+                        alert("Thank you " + fn + "\nWe just send message to " + email + "\nor call to " + tel);
+                        //$('#contact').append("<br>Thank you " + fn + "<br>We just send message to " + email + "<br>or call to " + tel +"<br>");
+                        location.reload();
+                    }else{
+                        alert("Please fill all field");
+                    }
+                
                  });
             </script>
             <script>
